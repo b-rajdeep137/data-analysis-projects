@@ -24,15 +24,17 @@ FROM RideShareDB.dbo.other_FHV_services_jan_aug_2015
 ORDER BY 'Month' DESC;
 */
 -- #4??
-SELECT DATENAME (WEEKDAY,Pick_Up_Date) AS 'Weekday', COUNT(Pick_Up_Date) AS 'number of pickup', DATENAME(MONTH ,Pick_Up_Date) AS 'Month'
+SELECT 
+    DATEPART (Day, Pick_Up_Date) AS 'Day Number', 
+      DATENAME(MONTH ,Pick_Up_Date) AS 'Month'
 FROM RideShareDB.dbo.other_FHV_services_jan_aug_2015
 GROUP BY Pick_Up_Date
-ORDER BY 'number of pickup' ASC;
+ORDER BY 'Day Number' ASC;
 
 SELECT *
 FROM RideShareDB.dbo.lyft;
 
--- #5 ??
+-- #5 Correct
 SELECT MAX(start_lng) AS 'Most Easterly pickup'
 FROM RideShareDB.dbo.lyft;
 
