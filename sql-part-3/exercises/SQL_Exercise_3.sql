@@ -65,7 +65,7 @@ JOIN BooksDB.dbo.book_tags as bt
 ON b.book_id= bt.goodreads_book_id
 WHERE bt.tag_id = 6709
 ORDER BY bt.count DESC;
-*/
+
 
 SELECT top 10 COUNT(tr.user_id) AS 'number of user', b.title
 From BooksDB.dbo.books as b 
@@ -73,3 +73,18 @@ LEFT JOIN BooksDB.dbo.to_read as tr
 ON b.book_id=tr.book_id 
 GROUP BY b.title
 ORDER BY 'number of user' DESC;
+
+SELECT top 10 COUNT(b.title) AS 'to read list', tr.user_id
+FROM BooksDB.dbo.books AS b 
+INNER JOIN BooksDB.dbo.to_read AS tr 
+ON b.book_id= tr.book_id 
+GROUP BY user_id  
+order by 'to read list' DESC;
+
+SELECT  tr.user_id ,(b.title)  AS 'to read list'
+FROM BooksDB.dbo.books AS b 
+INNER JOIN BooksDB.dbo.to_read AS tr 
+ON b.book_id= tr.book_id 
+WHERE tr.user_id =14771
+GROUP BY tr.user_id , b.title;
+*/
