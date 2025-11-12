@@ -30,6 +30,6 @@ for index in range(max_index, -1, -1):
 print(new_word)
 
 # 3. Refactor the code to print a combination of the original and reversed string. For example, given 'tomato', print 'tomatootamot'. (If you want to be fancy, print 'tomato | otamot').
-combined_word = word + word[::-1]
 
+combined_word = word + word[::-1]
 print(combined_word)
