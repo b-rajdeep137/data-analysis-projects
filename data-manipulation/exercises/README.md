@@ -34,7 +34,7 @@ Context for each Dataset.
 
 **embark_town**: Port of Embarkation represented as a string value
 
-**alive** Yes or No is survived
+**alive**: Yes or No if survived
 
 **alone**: Bool if traveled alone, that is no siblings, parents or children
 
